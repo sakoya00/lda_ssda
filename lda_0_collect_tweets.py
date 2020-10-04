@@ -86,9 +86,6 @@ op.add_option("-t", "--timelines",
               action="store_true", dest="timelines", default=False,
               help="Extracts timelines of the followers from Twitter")
 
-op.add_option("-d", "--dbname", dest="dbname", default='twitter',
-              help="Name of the MongDB database")
-
 op.add_option("-n", "--n_followers", dest="n_followers", default='5000',
               help="Number of follower IDs; 5000 at a time")
 
@@ -112,11 +109,6 @@ APP_SECRET    = config['credentials']['app_secret']
 twitter       = Twython(APP_KEY, APP_SECRET, oauth_version=2)
 ACCESS_TOKEN  = twitter.obtain_access_token()
 twitter       = Twython(APP_KEY, access_token=ACCESS_TOKEN)
-
-#  MongoDB connection
-client      = MongoClient()
-db          = client[opts.dbname]
-
 # -----------------------------------------------------------
 #  Follower IDs
 # -----------------------------------------------------------
