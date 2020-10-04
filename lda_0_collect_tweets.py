@@ -70,10 +70,7 @@ print(__doc__)
 # Display progress logs on stdout
 logging.basicConfig(level=logging.INFO,
                     format='>>> %(asctime)s %(levelname)s %(message)s')
-
-# ---------------------------------------------------------
-#  parse commandline arguments
-# ---------------------------------------------------------
+#Parse arguments
 
 op = OptionParser()
 op.add_option("-s", "--screen_name",
@@ -100,7 +97,7 @@ op.add_option("-n", "--n_followers", dest="n_followers", default='5000',
 print(opts)
 
 screen_name  = opts.screen_name.lower()     # The main twitter account
-n_days       = 180          # Only tweets more recent than n_days are kept
+n_days       = 31         # Only tweets more recent than n_days are kept
 n_followers  = int(opts.n_followers)
 
 # ---------------------------------------------------------
