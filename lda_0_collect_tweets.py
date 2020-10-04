@@ -1,6 +1,7 @@
 #Modified from Alexis Perrier's LDA Topic Modelling Tutorial
 #Tutorial: https://alexisperrier.com/nlp/2015/09/04/topic-modeling-of-twitter-followers.html
 
+#pip install pymongo[srv]
 from __future__ import print_function
 import logging
 import numpy as np
